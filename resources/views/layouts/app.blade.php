@@ -58,7 +58,7 @@
           <li><a href="#pricing">Ta'lim</a></li>
           <li class="drop-down"><a href="#">Maqola</a>
             <ul>
-              <li><a href="#">Maqolalar</a></li>
+              <li><a href="{{route('article')}}">Maqolalar</a></li>
               <li class="drop-down"><a href="#">Python</a>
                 <ul>
                   <li><a href="#">Python haqida</a></li>

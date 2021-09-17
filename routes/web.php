@@ -17,6 +17,9 @@
 Route::get('/', function () {
     return view('index');
 });
+Route::get('/article', function () {
+    return view('article');
+})->name('article');
 
 
 Route::group(['prefix' => 'admin'], function () {

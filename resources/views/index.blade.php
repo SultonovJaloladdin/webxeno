@@ -119,7 +119,7 @@
           <h2>Xizmatlar</h2>
           <p>Bizni xizmatlarning tavsifi.</p>
         </div>
-
+    </section>
     <!-- ======= More Services Section ======= -->
     <section id="more-services" class="more-services">
       <div class="container">
