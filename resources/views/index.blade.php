@@ -114,7 +114,6 @@
     <!-- ======= Services Section ======= -->
     <section id="services" class="services">
       <div class="container">
-
         <div class="section-title" data-aos="fade-up">
           <h2>Xizmatlar</h2>
           <p>Bizni xizmatlarning tavsifi.</p>
@@ -447,8 +446,9 @@
           </div>
 
           <div class="col-lg-5 col-md-12" data-aos="fade-up" data-aos-delay="300">
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+            <form action="/contact" method="post" role="form" class="php-email-form">
               <div class="form-group">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}" />
                 <input type="text" name="name" class="form-control" id="name" placeholder="Ismingiz" data-rule="minlen:4" data-msg="Iltimos, kamida 4 ta belgini kiriting" />
                 <div class="validate"></div>
               </div>

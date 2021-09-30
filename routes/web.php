@@ -18,7 +18,10 @@ Route::get('/', function () {
     return view('index');
 })->name('index');
 Route::get('/article', 'HomeController@index')->name('article');
+Route::get('/article/{id}', 'HomeController@readMore');
+Route::post('/contact', 'HomeController@contact');
+
 
 Route::group(['prefix' => 'admin'], function () {
-    Voyager::routes();
+    Voyager::routes();  
 });

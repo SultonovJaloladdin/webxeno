@@ -15,4 +15,10 @@ class Post extends Model
         'image',
         'slug'
     ];
+
+    public function getreadmore()
+    {   
+        return substr(strip_tags($this->body), 0, 50)
+            . '...';
+    }
 }
