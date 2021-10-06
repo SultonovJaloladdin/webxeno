@@ -444,11 +444,11 @@
 
             </div>
           </div>
-
           <div class="col-lg-5 col-md-12" data-aos="fade-up" data-aos-delay="300">
-            <form action="/contact" method="post" role="form" class="php-email-form">
+            <form action="{{ ('contact') }}" method="post" role="form" class="php-email-form">
               <div class="form-group">
-                <input type="hidden" name="_token" value="{{ csrf_token() }}" />
+                {{-- <input type="hidden" name="_token" value="{{ csrf_token() }}" /> --}}
+                @csrf
                 <input type="text" name="name" class="form-control" id="name" placeholder="Ismingiz" data-rule="minlen:4" data-msg="Iltimos, kamida 4 ta belgini kiriting" />
                 <div class="validate"></div>
               </div>
@@ -465,9 +465,9 @@
                 <div class="validate"></div>
               </div>
               <div class="mb-3">
-                <div class="loading">Yuklamoq</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Sizning xabaringiz yuborildi. Rahmat!</div>
+                <div class="loading">Kuting</div>
+                {{-- <div class="error-message">mofaqiaysizlik</div> --}}
+                {{-- <div class="sent-message">Sizning xabaringiz yuborildi. Rahmat!</div> --}}
               </div>
               <div class="text-center"><button type="submit">Xabar yuborish</button></div>
             </form>
