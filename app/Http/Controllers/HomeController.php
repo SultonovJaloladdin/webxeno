@@ -9,28 +9,19 @@ class HomeController extends Controller
     public function index()
     {
         
-        $posts = Post::orderBy('id', 'desc')->get();
+        $posts = Post::paginate(8);
         //dd($posts);
         return view('article', compact('posts'));
     }
 
-    public function readMore( Post $id)
+    public function readMore($id)
     {
-        dd($id);
-        return view('artcleMore', compact('post'));
+        $data = Post::where('id', '=', $id)->first();
+        //$famous = Post::where('id', '=', 1)->orderBy('views', 'desc')->get();
+        //$data->increment('views');
+        //dd($data);
+        return view('articleMore', compact('data'));
     }
-
-    // public function getIp()
-    // {
-    //     if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
-    //         $ip = $_SERVER['HTTP_CLIENT_IP'];
-    //     } else if (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
-    //         $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
-    //     } else {
-    //         $ip = $_SERVER['REMOTE_ADDR'];
-    //     }
-    //     return $ip;
-    // }
 
     public function contact(Request $request)
     {
@@ -63,15 +54,7 @@ class HomeController extends Controller
 
         $sendToTelegram = fopen("https://api.telegram.org/bot{$token}/sendMessage?chat_id={$chat_id}&parse_mode=html&text={$txt}", "r");
 
-        if($sendToTelegram)
-        {
-            echo 'success';
-
-        }else{
-            echo '<h1> Do not send the comments . Try after some minute!</h1>';
-        }
-            
-        
+        return redirect()->route('alert.succes')->with('success','Added successfully');
 
     }
 

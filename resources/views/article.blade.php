@@ -22,12 +22,17 @@
               <div class="card-body">
                 <h5 class="card-title"><a href="">{{ $item->title }}</a></h5>
                 <p class="rd-text">{!! substr(strip_tags($item->body), 0, 50) !!}</p>
-                <div class="read-more"><a href="/artcle/{{ $item->id }}"><i class="icofont-arrow-right"></i>Batafsil</a></div>
+                <div class="read-more"><a href="article/{{ $item->id }}"><i class="icofont-arrow-right"></i>Batafsil</a></div>
               </div>
             </div>
           </div>
           @endforeach
         </div>
       </div>
-    </section> 
+    </section>
+    <div class="container bg-light">
+      <div class="col-md-6 text-center">
+        {{ $posts->links() }}
+      </div>
+ 
 @endsection
